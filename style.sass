@@ -1,8 +1,61 @@
+@use '/sass/variables'
+@use '/sass/mixins'
+
+$smartphone: 480px
+$tablet: 768px
+$desktop: 1024px
+
 *
+    font-family: Nunito-Sans, sans-serif
     margin: 0
     padding: 0
-
+    box-sizing: border-box
 
 body
-    font-family: Nunito-Sans, sans-serif
-    
+    background-color: variables.$bg-color
+    color: variables.$text-color
+
+    a
+        color: variables.$text-color
+        text-decoration: none
+        transition: .4s
+
+    i
+        color: blue
+
+    ul
+        list-style: none
+
+.header
+    display: flex
+    justify-content: space-between
+    @include mixins.container
+
+    &-brand //.header-brand
+        color: variables.$primary-color
+        font-size: 1.5rem
+        @media screen 
+            @media(min-width: $desktop)
+                font-size: 3rem
+
+    &-navbar //.header-navbar
+
+        ul
+            height: 100%
+            @include mixins.flex-center
+
+            li
+                margin: 0 0.2rem
+                font-size: .7rem            
+                text-transform: uppercase
+                @media screen
+                    @media(min-width: $desktop)
+                        margin: 0 1rem
+                        font-size: .8rem
+
+                .active
+                    color: variables.$secondary-color
+
+            a
+                &:hover
+                    color: variables.$secondary-color
