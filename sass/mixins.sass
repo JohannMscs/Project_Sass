@@ -1,5 +1,12 @@
 @use './variables'
 
+//scale media querys
+$mobile: 480px
+$tablet: 768px
+$desktop: 1024px
+$max-desktop: 1920px
+
+
 @mixin container
     max-width: variables.$container-width
     padding: 1.5rem 0
@@ -10,9 +17,60 @@
     justify-content: center
     align-items: center
 
+@mixin bg-img($img)
+    background-image: url('../img/#{$img}')
+    background-size: 200px 250px 
+    background-position: center
+    background-repeat: no-repeat
+    filter: grayscale(100%)
+    transition: 0.8s
+    @media screen 
+        @media(max-width: $mobile)
+            background-size: 200px 300px
+            &:hover
+                background-size: 220px 330px
+                
+        @media(min-width: $mobile)
+            background-size: 250px 400px
+            &:hover
+                background-size: 275px 440px
+                
+
+        @media(min-width: $tablet)
+            background-size: 350px 500px
+            &:hover
+                background-size: 385px 525px
+
+        @media(min-width: $desktop)
+            background-size: 400px 500px 
+            &:hover
+                background-size: 440px 550px
+
+        @media(max-width:$max-desktop)
+            &:hover
+                filter: grayscale(0%)
+            
+            
+    
+    
+        
+
+@mixin media-card
+    @media screen 
+    @media(min-width: $tablet)
+        height: 400px
+        width: 32% 
+    @media(min-width: $desktop)
+        height: 500px
+        width: 33%
+
+
+            
+              
 
     
-  
+    
+
 
           
           

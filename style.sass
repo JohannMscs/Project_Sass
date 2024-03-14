@@ -1,7 +1,8 @@
 @use '/sass/variables'
 @use '/sass/mixins'
 
-$smartphone: 480px
+//scale media querys
+$mobile: 480px
 $tablet: 768px
 $desktop: 1024px
 
@@ -14,7 +15,7 @@ $desktop: 1024px
 body
     background-color: variables.$bg-color
     color: variables.$text-color
-
+    
     a
         color: variables.$text-color
         text-decoration: none
@@ -59,37 +60,67 @@ body
             a
                 &:hover
                     color: variables.$secondary-color
+                    transition: 1s
 
 .gallery
     @include mixins.flex-center
     @include mixins.container
     flex-wrap: wrap
     justify-content: space-between
-    padding: 0
+    padding: 2px
+    
 
-    &-card 
+    &-card
         width: 31%
-        height: 400px
+        height: 250px
         margin-bottom: 4%
-        text-align: center
-        
+        text-align: start
+        background-color: #424141
+        display: flex
+        flex-direction: column
+        @include mixins.media-card
+
         &-title
+            color: variables.$country-name
             font-size: 1.5rem
             font-weight: 500
-            margin-bottom: 1rem
-            @media screen 
-                @media(min-width: $desktop)
+            @media screen
+                @media(min-width: $tablet)
                     font-size: 3rem
 
         &-btn
-            padding: .6rem 2rem
+            padding: .6rem 1.5rem
             border: 2px solid variables.$primary-color
             color: variables.$primary-color
-            font-size: 10px
+            font-size: 13px
+            text-align: center
+            margin-top: auto
+            background-color: variables.$bg-color
+            opacity:(50%)
+            
 
             &:hover
-                background-color: gray
-
+                background-color: variables.$primary-color 
+                opacity: (85%)
+                color: variables.$text-color
+                transition: 1s
                 
-            
+
+    #card-1
+        @include mixins.bg-img($img:'Brasil.jpg')
+
+    #card-2
+        @include mixins.bg-img($img:'Japão.jpg')
+
+    #card-3
+        @include mixins.bg-img($img:'New-York.jpg')
+    
+    #card-4
+        @include mixins.bg-img($img:'Germany.jpg')
+
+    #card-5
+        @include mixins.bg-img($img:'China.jpg')
+
+    #card-6
+        @include mixins.bg-img($img:'Canada.jpg')
         
