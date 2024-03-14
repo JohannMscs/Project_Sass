@@ -34,8 +34,8 @@ body
     &-brand //.header-brand
         color: variables.$primary-color
         font-size: 1.5rem
-        @media screen 
-            @media(min-width: $desktop)
+        @media screen
+            @media(min-width: $tablet)
                 font-size: 3rem
 
     &-navbar //.header-navbar
@@ -46,10 +46,10 @@ body
 
             li
                 margin: 0 0.2rem
-                font-size: .7rem            
+                font-size: .7rem
                 text-transform: uppercase
                 @media screen
-                    @media(min-width: $desktop)
+                    @media(min-width: $tablet)
                         margin: 0 1rem
                         font-size: .8rem
 
@@ -59,3 +59,37 @@ body
             a
                 &:hover
                     color: variables.$secondary-color
+
+.gallery
+    @include mixins.flex-center
+    @include mixins.container
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+
+    &-card 
+        width: 31%
+        height: 400px
+        margin-bottom: 4%
+        text-align: center
+        
+        &-title
+            font-size: 1.5rem
+            font-weight: 500
+            margin-bottom: 1rem
+            @media screen 
+                @media(min-width: $desktop)
+                    font-size: 3rem
+
+        &-btn
+            padding: .6rem 2rem
+            border: 2px solid variables.$primary-color
+            color: variables.$primary-color
+            font-size: 10px
+
+            &:hover
+                background-color: gray
+
+                
+            
+        
