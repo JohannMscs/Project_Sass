@@ -19,15 +19,13 @@ body
     a
         color: variables.$text-color
         text-decoration: none
-        transition: .4s
-
-    i
-        color: blue
+        transition: .4s  
 
     ul
         list-style: none
 
 .header
+    background-color: variables.$bg-start-end
     display: flex
     justify-content: space-between
     @include mixins.container
@@ -64,7 +62,8 @@ body
 
 .gallery
     @include mixins.flex-center
-    @include mixins.container
+    @include mixins.gallery
+    margin-top: 4%
     flex-wrap: wrap
     justify-content: space-between
     padding: 2px
@@ -123,4 +122,46 @@ body
 
     #card-6
         @include mixins.bg-img($img:'Canada.jpg')
+
+    #card-7
+        @include mixins.bg-img($img:'Dubai.jpg')
+
+    #card-8
+        @include mixins.bg-img($img:'Singapura.jpg')
+
+    #card-9
+        @include mixins.bg-img($img:'Egito.jpg')
         
+footer
+    background-color: variables.$bg-start-end
+    flex-direction: column
+    @include mixins.container
+    @include mixins.flex-center
+    ul
+        display: flex
+        padding: 0.5rem      
+
+        li
+
+            i   
+                
+                margin: 1rem
+                border-radius: 3px
+                padding: 3px 6px
+
+            #facebook
+                color: #1800f1
+
+            #twitter
+                color: #3272f3
+
+            #instagram
+                color:#de0587
+            
+            #youtube
+                color: #fb0404
+
+            
+
+            
+            
